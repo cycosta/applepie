@@ -10,5 +10,11 @@ export function getRecipes(params) {
 
   return fetch(apiUrl, { headers })
     .then(response => response.json())
+    .then(data => {
+      const { results } = data
+      console.log(results)
+
+      return results
+    })
     .catch((error) => console.error(error))
 }
