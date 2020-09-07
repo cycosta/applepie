@@ -1,0 +1,118 @@
+.card {
+  width: 100%;
+	background-color: white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+	&:hover {
+		.card__caption {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.card__image {
+			transform: scale(1.1) translateY(-10px);
+		}
+
+		.card__thumb {
+			&::after {
+				top: 0;
+			}
+		}
+
+		.card__button {
+      margin-top: 20px;
+      opacity: 1;
+		}
+	}
+
+	&__thumb {
+		position: relative;
+		height: 300px;
+    overflow: hidden;
+
+    @include breakpoint(desktop) {
+      height: 400px;
+    }
+
+		&::after {
+			position: absolute;
+			top: 0;
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, rgba(0, 0, 0, .5) 60%, rgba(255, 255 ,255 , 0) 100%);
+			transition: .3s;
+
+			@include breakpoint(desktop) {
+				top: calc(100% - 180px);
+			}
+		}
+	}
+
+	&__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: .5s ease-in-out;
+	}
+
+	&__caption {
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 90%;
+		padding: 0 20px;
+		color: white;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		transition: .3s;
+
+		@include breakpoint(desktop) {
+			top: calc(100% - 110px);
+      left: unset;
+      width: 100%;
+      transform: unset;
+		}
+	}
+
+	&__title {
+		display: -webkit-box;
+		max-height: 85px;
+    overflow: hidden;
+		font-family: $headingFont;
+		font-size: 2.3rem;
+		line-height: 28px;
+    text-transform: capitalize;
+		text-shadow: 0px 1px 5px black;
+		text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+	}
+
+	&__button {
+		display: inline-block;
+    margin-top: 20px;
+		padding: 10px 20px;
+		color: white;
+		border: 1px solid white;
+		font-family: $textFont;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		text-decoration: none;
+    transition: .3s;
+    transition: .5s ease-in-out;
+
+    @include breakpoint(desktop) {
+      margin-top: 60px;
+      opacity: 0;
+    }
+
+		&:hover {
+			color: white;
+			background-color: $candy-apple;
+		}
+	}
+}

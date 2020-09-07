@@ -2,13 +2,24 @@
   @extend .container;
 
   display: grid;
-  grid-gap: 20px;
+  grid-row-gap: 40px;
+  grid-template-rows: auto;
+  margin: 40px auto;
 
   @include breakpoint(tablet) {
-    grid-template-columns: 2fr 2fr;
+    grid-gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @include breakpoint(desktop) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__noresult {
+    grid-column: 1/5;
+    color: $candy-apple;
+    font-family: $textFont;
+    font-size: 2.4rem;
+    text-align: left;
   }
 }
