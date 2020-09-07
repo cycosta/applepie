@@ -1,0 +1,14 @@
+.list {
+  @extend .container;
+
+  display: grid;
+  grid-gap: 20px;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  @include breakpoint(desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
