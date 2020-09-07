@@ -1,0 +1,41 @@
+.footer {
+  padding: 20px 0;
+  background-color: $candy-apple;
+
+  &__wrapper {
+    @extend .container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    color: white;
+    font-family: $textFont;
+    font-size: 1.4rem;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    @include breakpoint(tablet) {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    margin-right: 10px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
