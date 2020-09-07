@@ -5,11 +5,15 @@ import { Router } from '@reach/router'
 // Main style
 import './assets/stylesheets/app.scss'
 
+// Components
+import Header from './components/Header'
+
 // Pages
 import Home from './Home'
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header />
     <Router>
       <Home path="/" />
     </Router>
