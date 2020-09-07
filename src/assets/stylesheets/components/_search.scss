@@ -1,0 +1,51 @@
+.search {
+  &__toggle {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+  }
+
+	&__button {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+		background-color: #fff;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: .3s;
+
+		&--submit {
+			display: none;
+			border: 0;
+		}
+	}
+
+	&__icon {
+		position: relative;
+		width: 19px;
+		height: 19px;
+
+		&::before {
+			display: block;
+			content: '';
+			width: 15px;
+			height: 15px;
+			background-color: transparent;
+			border: 2px solid $candy-apple;
+			border-radius: 50px;
+		}
+
+		&::after {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			display: block;
+			content: '';
+			width: 8px;
+			height: 2px;
+			background-color: $candy-apple;
+			transform: rotate(45deg);
+    	transform-origin: right;
+		}
+	}
+}

@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+// Components
+import Search from './Search'
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -9,6 +12,7 @@ function Header() {
         <div className="header__icon"></div>
       </button>
       <h1 className="header__logo">applepie</h1>
+      <Search />
     </header>
   )
 }
