@@ -5,14 +5,13 @@ const headers = {
 }
 
 // Search Recipes
-export function getRecipes(params) {
-  const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?number=12&${params}&apiKey=${apiKey}`
+export function getRecipes(type) {
+  const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?number=12&type=${type}&apiKey=${apiKey}`
 
   return fetch(apiUrl, { headers })
     .then(response => response.json())
     .then(data => {
       const { results } = data
-      console.log(results)
 
       return results
     })

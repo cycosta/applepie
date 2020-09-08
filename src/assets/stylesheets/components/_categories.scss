@@ -1,0 +1,124 @@
+.categories {
+  @extend .container;
+
+  position: relative;
+  margin: 40px auto;
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid $candy-apple;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include breakpoint(desktop) {
+      display: block;
+    }
+
+    &--prev {
+      left: 26px;
+      border-left: 2px solid $candy-apple;
+      transform: rotate(-45deg);
+
+      @include breakpoint(desktop) {
+        left: 0;
+      }
+    }
+
+    &--next {
+      right: 26px;
+      border-right: 2px solid $candy-apple;
+      transform: rotate(45deg);
+
+      @include breakpoint(desktop) {
+        right: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      .categories__image {
+        transform: scale(1);
+      }
+
+      .categories__label {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__link {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+
+    &--active {
+      .categories__image {
+        transform: scale(1);
+      }
+
+      .categories__label {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    border: 3px solid $tangerine;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: .3s;
+    object-fit: cover;
+
+    @include breakpoint(desktop) {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    font-family: $textFont;
+    font-size: 1.4rem;
+    text-align: center;
+
+    @include breakpoint(desktop) {
+      font-size: 1.6rem;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -1px;
+      display: block;
+      content: '';
+      width: 0;
+      height: 4px;
+      background-color: $tangerine;
+      transition: .3s;
+    }
+  }
+}
