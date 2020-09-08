@@ -2,69 +2,9 @@
   @extend .container;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
-
-  &__menu {
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    display: block;
-    width: 30px;
-    height: 20px;
-    background-color: transparent;
-    border: 0;
-
-    &::before,
-    &::after {
-      position: absolute;
-      display: block;
-      content: '';
-      width: 100%;
-      height: 2px;
-      background-color: $candy-apple;
-      transition: .3s;
-    }
-
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
-    }
-
-    &--close {
-      &::before,
-      &::after {
-        top: 50%;
-      }
-
-      &::before {
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
-
-      .header__icon {
-        display: none;
-      }
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    top: 50%;
-    width: 80%;
-    height: 2px;
-    background-color: $candy-apple;
-    transform: translateY(-50%);
-    transition: .3s;
-  }
 
   &__logo {
     color: $candy-apple;
