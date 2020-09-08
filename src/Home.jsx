@@ -6,6 +6,7 @@ import { getRecipes } from './services/api'
 import { categories } from './services/data'
 
 // Copmonents
+import Hero from './components/Hero'
 import Categories from './components/Categories'
 import Title from './components/Title'
 import List from './components/List';
@@ -23,6 +24,7 @@ function Home() {
 
   return (
     <>
+      <Hero />
       <Categories categories={categories} filter={filter} setFilter={setFilter} setTitle={setTitle} />
       <Title categories={categories} title={title} />
       <List recipes={recipes} />

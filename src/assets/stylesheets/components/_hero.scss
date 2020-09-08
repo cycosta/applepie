@@ -1,0 +1,47 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-top: 20px;
+  background-image: url('../../images/hero-bg.jpg');
+  background-position: left bottom;
+  background-size: cover;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .2;
+  }
+
+  &__content {
+    @extend .container;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &__caption {
+    color: white;
+    filter: drop-shadow(3px 3px 3px black);
+    font-family: $headingFont;
+    font-size: 2.2rem;
+    text-align: center;
+
+    @include breakpoint(tablet) {
+      font-size: 3rem;
+    }
+  }
+}
